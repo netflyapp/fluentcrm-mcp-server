@@ -1,6 +1,6 @@
 # 🚀 FluentCRM MCP Server
 
-**MCP Server dla FluentCRM** - zarządzaj całą automatyzacją marketingową Autowebinaru Korki AI bezpośrednio z poziomu Cursor!
+**MCP Server dla FluentCRM** - zarządzaj całą automatyzacją marketingową bezpośrednio z poziomu Cursor!
 
 ---
 
