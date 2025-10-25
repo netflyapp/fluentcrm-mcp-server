@@ -1,76 +1,76 @@
 # 🚀 FluentCRM MCP Server
 
-**MCP Server dla FluentCRM** - zarządzaj całą automatyzacją marketingową bezpośrednio z poziomu Cursor!
+**MCP Server for FluentCRM** - manage your entire marketing automation directly from Cursor!
 
 ---
 
-## 📋 Spis treści
+## 📋 Table of Contents
 
-- [Czym jest MCP Server?](#czym-jest-mcp-server)
-- [Wymagania](#wymagania)
-- [Instalacja](#instalacja)
-- [Konfiguracja](#konfiguracja)
-- [Użycie](#użycie)
-- [Dostępne narzędzia](#dostępne-narzędzia)
-- [Przykłady](#przykłady)
+- [What is MCP Server?](#what-is-mcp-server)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Available Tools](#available-tools)
+- [Examples](#examples)
 - [Troubleshooting](#troubleshooting)
 
 ---
 
-## Czym jest MCP Server?
+## What is MCP Server?
 
-**MCP** (Model Context Protocol) to nowy standard od Anthropic, który pozwala AI modelom (w tym Claude w Cursor) łączyć się z zewnętrznymi systemami.
+**MCP** (Model Context Protocol) is a new standard from Anthropic that allows AI models (including Claude in Cursor) to connect to external systems.
 
-Ten MCP Server pozwala Tobie:
+This MCP Server allows you to:
 
-✅ **Zarządzać tagami** - tworzyć, usuwać, przypisywać do kontaktów  
-✅ **Edytować listy** - tworzyć listy, dodawać/usuwać kontakty  
-✅ **Tworzyć kampanie** - wysyłać email do segmentów użytkowników  
-✅ **Automatyzacje** - zarządzać funnelami (automatyzacjami)  
-✅ **Webhooks** - konfigurować webhook'i do FluentCRM  
-✅ **Raporty** - pobierać statystyki i metryki  
-✅ **Smart Links** - zarządzać inteligentnymi linkami (gdy API będzie dostępne)
+✅ **Manage tags** - create, delete, assign to contacts  
+✅ **Edit lists** - create lists, add/remove contacts  
+✅ **Create campaigns** - send emails to user segments  
+✅ **Automations** - manage funnels (automations)  
+✅ **Webhooks** - configure webhooks to FluentCRM  
+✅ **Reports** - fetch statistics and metrics  
+✅ **Smart Links** - manage smart links (when API becomes available)
 
-Wszystko bezpośrednio z Cursor, w rozmowie z Claude!
+Everything directly from Cursor, in conversation with Claude!
 
 ---
 
-## Wymagania
+## Requirements
 
 - ✅ Node.js 18+
-- ✅ npm lub yarn
-- ✅ Dostęp do FluentCRM API (twoja domena WordPress)
-- ✅ Cursor z obsługą MCP
-- ✅ API Key z FluentCRM (wygeneruj w Settings → Rest API)
+- ✅ npm or yarn
+- ✅ Access to FluentCRM API (your WordPress domain)
+- ✅ Cursor with MCP support
+- ✅ API Key from FluentCRM (generate in Settings → Rest API)
 
 ---
 
-## Instalacja
+## Installation
 
-### Krok 1: Klonuj repozytorium lub skopiuj pliki
+### Step 1: Clone repository or copy files
 
 ```bash
 cd /path/to/your/fluentcrm-mcp-server
 ```
 
-### Krok 2: Zainstaluj zależności
+### Step 2: Install dependencies
 
 ```bash
 npm install
 ```
 
-### Krok 3: Build TypeScript
+### Step 3: Build TypeScript
 
 ```bash
 npm run build
 ```
 
-Powinieneś zobaczyć:
+You should see:
 ```
 ✅ dist/fluentcrm-mcp-server.js (compiled)
 ```
 
-### Krok 4: Testuj połączenie
+### Step 4: Test connection
 
 ```bash
 export FLUENTCRM_API_USERNAME="your_username"
@@ -78,43 +78,43 @@ export FLUENTCRM_API_PASSWORD="your_password"
 npm start
 ```
 
-Powinieneś zobaczyć:
+You should see:
 ```
 🚀 FluentCRM MCP Server running on stdio
 📡 API URL: https://your-domain.com/wp-json/fluent-crm/v2
 👤 Username: your_username
 ```
 
-Wciśnij `CTRL+C` aby zatrzymać.
+Press `CTRL+C` to stop.
 
 ---
 
-## Konfiguracja
+## Configuration
 
-### 1. Pobierz API Credentials z FluentCRM
+### 1. Get API Credentials from FluentCRM
 
-Krokami:
+Step by step:
 
-1. Zaloguj się do WordPress: `https://your-domain.com/wp-admin`
-2. Przejdź do: **FluentCRM → Settings → Managers**
-3. Kliknij **Add New Manager**
-4. Wpisz:
-   - Name: `MCP Server` (lub coś innego)
-   - Role: `Subscriber` (wystarczy)
-   - Permissions: Zaznacz wszystkie FluentCRM permissions
-5. Kliknij **Save Manager**
+1. Log in to WordPress: `https://your-domain.com/wp-admin`
+2. Go to: **FluentCRM → Settings → Managers**
+3. Click **Add New Manager**
+4. Enter:
+   - Name: `MCP Server` (or something else)
+   - Role: `Subscriber` (sufficient)
+   - Permissions: Check all FluentCRM permissions
+5. Click **Save Manager**
 
-6. Przejdź do: **FluentCRM → Settings → Rest API**
-7. Kliknij **Create New Key**
-8. Wybierz managera którą właśnie stworzyłeś
-9. Kliknij **Confirm**
-10. Skopiuj:
+6. Go to: **FluentCRM → Settings → Rest API**
+7. Click **Create New Key**
+8. Select the manager you just created
+9. Click **Confirm**
+10. Copy:
     - **Username** (API_USERNAME)
     - **Application Password** (API_PASSWORD)
 
-### 2. Ustaw zmienne środowiskowe
+### 2. Set environment variables
 
-**Opcja A: Edytuj `.env` plik**
+**Option A: Edit `.env` file**
 
 ```bash
 # .env
@@ -123,19 +123,19 @@ FLUENTCRM_API_PASSWORD=your_api_password
 FLUENTCRM_API_URL=https://your-domain.com/wp-json/fluent-crm/v2
 ```
 
-**Opcja B: Export z terminala**
+**Option B: Export from terminal**
 
 ```bash
 export FLUENTCRM_API_USERNAME="your_api_username"
 export FLUENTCRM_API_PASSWORD="your_api_password"
 ```
 
-### 3. Konfiguracja Cursor (MCP)
+### 3. Cursor Configuration (MCP)
 
-1. Otwórz Cursor
-2. Naciśnij `Cmd+Shift+P` (macOS) lub `Ctrl+Shift+P` (Windows/Linux)
-3. Wyszukaj: "MCP settings" lub "Preferences: Open MCP Settings"
-4. Edytuj plik konfiguracji:
+1. Open Cursor
+2. Press `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows/Linux)
+3. Search for: "MCP settings" or "Preferences: Open MCP Settings"
+4. Edit configuration file:
 
 ```json
 {
@@ -155,139 +155,139 @@ export FLUENTCRM_API_PASSWORD="your_api_password"
 }
 ```
 
-5. Zapisz i restart Cursor
+5. Save and restart Cursor
 
 ---
 
-## Użycie
+## Usage
 
-Po skonfigurowaniu, otwórz chat w Cursor i zacznij zadawać pytania!
+After configuration, open chat in Cursor and start asking questions!
 
-### Proste pytania:
+### Simple questions:
 
 ```
-Pokaż mi wszystkie tagi w FluentCRM
+Show me all tags in FluentCRM
 ```
 
-Claude automatycznie użyje MCP Server i zwróci listę tagów.
+Claude will automatically use the MCP Server and return a list of tags.
 
 ---
 
-## Dostępne narzędzia
+## Available Tools
 
-### 👤 KONTAKTY (Subscribers)
+### 👤 CONTACTS (Subscribers)
 
-- `fluentcrm_list_contacts` - Pobiera listę kontaktów
-- `fluentcrm_get_contact` - Pobiera szczegóły kontaktu
-- `fluentcrm_find_contact_by_email` - Szuka po emailu
-- `fluentcrm_create_contact` - Tworzy nowy kontakt
-- `fluentcrm_update_contact` - Aktualizuje kontakt
-- `fluentcrm_delete_contact` - Usuwa kontakt
+- `fluentcrm_list_contacts` - Get list of contacts
+- `fluentcrm_get_contact` - Get contact details
+- `fluentcrm_find_contact_by_email` - Search by email
+- `fluentcrm_create_contact` - Create new contact
+- `fluentcrm_update_contact` - Update contact
+- `fluentcrm_delete_contact` - Delete contact
 
-### 🏷️ TAGI
+### 🏷️ TAGS
 
-- `fluentcrm_list_tags` - Pobiera wszystkie tagi
-- `fluentcrm_create_tag` - Tworzy nowy tag
-- `fluentcrm_delete_tag` - Usuwa tag
-- `fluentcrm_attach_tag_to_contact` - Przypisuje tag do kontaktu
-- `fluentcrm_detach_tag_from_contact` - Usuwa tag z kontaktu
+- `fluentcrm_list_tags` - Get all tags
+- `fluentcrm_create_tag` - Create new tag
+- `fluentcrm_delete_tag` - Delete tag
+- `fluentcrm_attach_tag_to_contact` - Assign tag to contact
+- `fluentcrm_detach_tag_from_contact` - Remove tag from contact
 
-### 📋 LISTY
+### 📋 LISTS
 
-- `fluentcrm_list_lists` - Pobiera wszystkie listy
-- `fluentcrm_create_list` - Tworzy nową listę
-- `fluentcrm_delete_list` - Usuwa listę
-- `fluentcrm_attach_contact_to_list` - Dodaje kontakt do listy
-- `fluentcrm_detach_contact_from_list` - Usuwa kontakt z listy
+- `fluentcrm_list_lists` - Get all lists
+- `fluentcrm_create_list` - Create new list
+- `fluentcrm_delete_list` - Delete list
+- `fluentcrm_attach_contact_to_list` - Add contact to list
+- `fluentcrm_detach_contact_from_list` - Remove contact from list
 
-### 📧 KAMPANIE
+### 📧 CAMPAIGNS
 
-- `fluentcrm_list_campaigns` - Pobiera kampanie
-- `fluentcrm_create_campaign` - Tworzy kampanię
-- `fluentcrm_pause_campaign` - Wstrzymuje kampanię
-- `fluentcrm_resume_campaign` - Wznawia kampanię
-- `fluentcrm_delete_campaign` - Usuwa kampanię
+- `fluentcrm_list_campaigns` - Get campaigns
+- `fluentcrm_create_campaign` - Create campaign
+- `fluentcrm_pause_campaign` - Pause campaign
+- `fluentcrm_resume_campaign` - Resume campaign
+- `fluentcrm_delete_campaign` - Delete campaign
 
 ### 📨 EMAIL TEMPLATES
 
-- `fluentcrm_list_email_templates` - Pobiera szablony
-- `fluentcrm_create_email_template` - Tworzy szablon
+- `fluentcrm_list_email_templates` - Get templates
+- `fluentcrm_create_email_template` - Create template
 
-### 🤖 AUTOMATYZACJE
+### 🤖 AUTOMATIONS
 
-- `fluentcrm_list_automations` - Pobiera automatyzacje (funnels)
-- `fluentcrm_create_automation` - Tworzy automatyzację
+- `fluentcrm_list_automations` - Get automations (funnels)
+- `fluentcrm_create_automation` - Create automation
 
 ### 🔗 WEBHOOKS
 
-- `fluentcrm_list_webhooks` - Pobiera webhooks
-- `fluentcrm_create_webhook` - Tworzy webhook
+- `fluentcrm_list_webhooks` - Get webhooks
+- `fluentcrm_create_webhook` - Create webhook
 
-### 📊 RAPORTY
+### 📊 REPORTS
 
-- `fluentcrm_dashboard_stats` - Statystyki dashboarda
-- `fluentcrm_custom_fields` - Pola niestandardowe
+- `fluentcrm_dashboard_stats` - Dashboard statistics
+- `fluentcrm_custom_fields` - Custom fields
 
 ---
 
-## Przykłady
+## Examples
 
-### Przykład 1: Pokaż wszystkie tagi
+### Example 1: Show all tags
 
-**W Cursor:**
+**In Cursor:**
 ```
-Pokaż mi wszystkie tagi w FluentCRM
+Show me all tags in FluentCRM
 ```
 
-**Claude zwróci:**
+**Claude will return:**
 ```
-✅ Pobieramy tagi z FluentCRM...
+✅ Fetching tags from FluentCRM...
 
-Znalazłem następujące tagi:
-1. zapisany (ID: 1)
+Found the following tags:
+1. registered (ID: 1)
 2. webinar-jit (ID: 2)
 3. progress-75 (ID: 3)
-4. uczestniczyl (ID: 4)
-... i 47 więcej
+4. participated (ID: 4)
+... and 47 more
 ```
 
-### Przykład 2: Stwórz nowy tag
+### Example 2: Create new tag
 
-**W Cursor:**
+**In Cursor:**
 ```
-Stwórz tag "hot-lead" z opisem "Osoby które obejrzały 75%+ i są zainteresowane"
+Create tag "hot-lead" with description "People who watched 75%+ and are interested"
 ```
 
-**Claude automatycznie:**
-1. Użyje narzędzia `fluentcrm_create_tag`
-2. Zwróci potwierdzenie
+**Claude automatically:**
+1. Uses `fluentcrm_create_tag` tool
+2. Returns confirmation
 
-### Przykład 3: Przypisz tag do kontaktu
+### Example 3: Assign tag to contact
 
-**W Cursor:**
+**In Cursor:**
 ```
-Przypisz tag "progress-75" do kontaktu z emailem "jan@example.com"
+Assign tag "progress-75" to contact with email "jan@example.com"
 ```
 
 **Claude:**
-1. Znajdzie kontakt po emailu
-2. Przypisze tag
-3. Zwróci potwierdzenie
+1. Finds contact by email
+2. Assigns tag
+3. Returns confirmation
 
-### Przykład 4: Stwórz listę
+### Example 4: Create list
 
-**W Cursor:**
+**In Cursor:**
 ```
-Stwórz nową listę "Hot-leads" z opisem "Uczestnicy którzy obejrzeli 75%+ webinaru"
+Create new list "Hot-leads" with description "Participants who watched 75%+ of webinar"
 ```
 
-**Claude tworzy listę**
+**Claude creates the list**
 
-### Przykład 5: Dodaj kontakt do listy
+### Example 5: Add contact to list
 
-**W Cursor:**
+**In Cursor:**
 ```
-Dodaj wszystkie kontakty z tagiem "progress-75" do listy "Hot-leads"
+Add all contacts with tag "progress-75" to list "Hot-leads"
 ```
 
 ---
@@ -296,69 +296,69 @@ Dodaj wszystkie kontakty z tagiem "progress-75" do listy "Hot-leads"
 
 ### ❌ Error: "Authorization failed"
 
-**Przyczyna**: Zły API Username lub Password
+**Cause**: Wrong API Username or Password
 
-**Rozwiązanie:**
-1. Przejdź do FluentCRM → Settings → Rest API
-2. Sprawdź czy API Key jest aktywny
-3. Skopiuj credentials ponownie
-4. Aktualizuj `.env` plik
+**Solution:**
+1. Go to FluentCRM → Settings → Rest API
+2. Check if API Key is active
+3. Copy credentials again
+4. Update `.env` file
 
 ### ❌ Error: "Connection refused"
 
-**Przyczyna**: FluentCRM API niedostępny
+**Cause**: FluentCRM API unavailable
 
-**Rozwiązanie:**
-1. Sprawdź czy twoja domena WordPress jest dostępna
+**Solution:**
+1. Check if your WordPress domain is accessible
 2. Ping: `ping your-domain.com`
-3. Sprawdź czy WordPress jest uruchomiony
+3. Check if WordPress is running
 
-### ❌ MCP Server się nie uruchamia
+### ❌ MCP Server won't start
 
-**Przyczyna**: Brakuje zależności
+**Cause**: Missing dependencies
 
-**Rozwiązanie:**
+**Solution:**
 ```bash
 npm install
 npm run build
 ```
 
-### ❌ Cursor nie widzi MCP Server
+### ❌ Cursor can't see MCP Server
 
-**Przyczyna**: Błędna ścieżka do pliku lub brakuje API credentials
+**Cause**: Wrong file path or missing API credentials
 
-**Rozwiązanie:**
-1. Sprawdź ścieżkę w konfiguracji MCP (`~/.cursor/settings.json`)
-2. Sprawdź czy plik `dist/fluentcrm-mcp-server.js` istnieje
+**Solution:**
+1. Check path in MCP configuration (`~/.cursor/settings.json`)
+2. Check if file `dist/fluentcrm-mcp-server.js` exists
 3. Restart Cursor
-4. Sprawdź logi: `cat ~/.cursor/logs.txt`
+4. Check logs: `cat ~/.cursor/logs.txt`
 
 ---
 
 ## API Reference
 
-Dokumentacja FluentCRM API: [https://rest-api.fluentcrm.com/#introduction](https://rest-api.fluentcrm.com/#introduction)
+FluentCRM API Documentation: [https://rest-api.fluentcrm.com/#introduction](https://rest-api.fluentcrm.com/#introduction)
 
 ---
 
-## Bezpieczeństwo
+## Security
 
-⚠️ **WAŻNE:**
+⚠️ **IMPORTANT:**
 
-- ❌ **NIGDY** nie commituj `.env` z rzeczywistymi credentials do git
-- ❌ **NIGDY** nie udostępniaj API keys publicznie
-- ✅ Użyj environment variables zamiast hardkodowania
-- ✅ Regularnie rotuj API keys
+- ❌ **NEVER** commit `.env` with real credentials to git
+- ❌ **NEVER** share API keys publicly
+- ✅ Use environment variables instead of hardcoding
+- ✅ Regularly rotate API keys
 
 ---
 
-## Aktualizacja
+## Update
 
-Aby zaktualizować MCP Server:
+To update MCP Server:
 
 ```bash
 cd fluentcrm-mcp-server
-git pull  # lub pobierz najnowszą wersję ręcznie
+git pull  # or download latest version manually
 npm install
 npm run build
 ```
@@ -367,202 +367,30 @@ Restart Cursor.
 
 ---
 
-## Wsparcie
+## Support
 
-W razie problemów:
+If you encounter problems:
 
-1. Sprawdź sekcję [Troubleshooting](#troubleshooting)
-2. Sprawdź logi FluentCRM: FluentCRM → Logs
-3. Sprawdź logi Cursor: `~/.cursor/logs.txt`
-4. Skontaktuj się z supportem
+1. Check the [Troubleshooting](#troubleshooting) section
+2. Check FluentCRM logs: FluentCRM → Logs
+3. Check Cursor logs: `~/.cursor/logs.txt`
+4. Contact support
 
 ---
 
-## Licencja
+## License
 
 MIT
 
 ---
 
-## Autor
+## Author
 
 **Miłosz Zając**  
 🌐 [www.netfly.pl](https://www.netfly.pl)
   
-**Data**: 2025-01-20  
-**Wersja**: 1.0.0
-
----
-
-Made with ❤️ by Miłosz Zając
-EOF
-
-cat > /Users/miloszzajac2/Desktop/111_mac_mini/10_BIZNES/10.01_projekty/10.01.05_autowebinar_korki/12_MCP_fluent_crm/README.md << 'README_EOF'
-# 🚀 FluentCRM MCP Server
-
-**MCP Server dla FluentCRM** - zarządzaj całą automatyzacją marketingową Autowebinaru Korki AI bezpośrednio z poziomu Cursor!
-
-## 📋 Spis treści
-
-- [Czym jest MCP Server?](#czym-jest-mcp-server)
-- [Wymagania](#wymagania)
-- [Szybki start (5 minut)](#szybki-start-5-minut)
-- [Instalacja](#instalacja)
-- [Użycie](#użycie)
-
----
-
-## Czym jest MCP Server?
-
-**MCP** (Model Context Protocol) to nowy standard od Anthropic, który pozwala AI modelom (w tym Claude w Cursor) łączyć się z zewnętrznymi systemami.
-
-✅ **Zarządzaj tagami** - bez klikania po FluentCRM  
-✅ **Edytuj listy** - dodawaj/usuwaj kontakty  
-✅ **Tworzy kampanie** - wysyłaj email do segmentów  
-✅ **Zarządzaj automatyzacjami** - edytuj funnels  
-✅ **Pobierz raporty** - statystyki i metryki  
-✅ **Smart Links** - zarządzaj inteligentnymi linkami  
-
-Wszystko z Cursor, w rozmowie z Claude!
-
----
-
-## Wymagania
-
-- Node.js 18+
-- npm
-- Dostęp do FluentCRM API (twoja domena WordPress)
-- Cursor z obsługą MCP
-
----
-
-## Szybki start (5 minut)
-
-### 1️⃣ Pobierz API Credentials
-
-```bash
-# Zaloguj się do: https://your-domain.com/wp-admin
-# Idź do: FluentCRM → Settings → Rest API
-# Kliknij: Create New Key
-# Skopiuj: Username i Password
-```
-
-### 2️⃣ Zainstaluj zależności
-
-```bash
-cd 12_MCP_fluent_crm
-npm install
-npm run build
-```
-
-### 3️⃣ Ustaw zmienne środowiskowe
-
-```bash
-# Edytuj .env:
-nano .env
-
-# Wklej swoje credentials:
-FLUENTCRM_API_USERNAME=your_username
-FLUENTCRM_API_PASSWORD=your_password
-```
-
-### 4️⃣ Skonfiguruj Cursor
-
-1. Otwórz Cursor Settings (Cmd+,)
-2. Szukaj: "MCP"
-3. Edytuj `~/.cursor/mcp_settings.json`:
-
-```json
-{
-  "mcpServers": {
-    "fluentcrm": {
-      "command": "node",
-      "args": [
-        "/ścieżka/do/12_MCP_fluent_crm/dist/fluentcrm-mcp-server.js"
-      ],
-      "env": {
-        "FLUENTCRM_API_USERNAME": "your_username",
-        "FLUENTCRM_API_PASSWORD": "your_password"
-      }
-    }
-  }
-}
-```
-
-4. Restart Cursor
-
-### 5️⃣ Testuj w Cursor
-
-W chat napиши:
-```
-Pokaż mi wszystkie tagi w FluentCRM
-```
-
-Claude zwróci listę tagów! ✅
-
----
-
-## Instalacja
-
-```bash
-cd /path/to/your/fluentcrm-mcp-server
-
-npm install
-npm run build
-
-# Test:
-export FLUENTCRM_API_USERNAME="your_username"
-export FLUENTCRM_API_PASSWORD="your_password"
-npm start
-```
-
----
-
-## Użycie - Przykłady
-
-### Stwórz tag
-
-```
-Stwórz tag "hot-lead" z opisem "Osoby zainteresowane ofertą"
-```
-
-### Przypisz tag do kontaktu
-
-```
-Przypisz tag "progress-75" do Jan@example.com
-```
-
-### Stwórz listę
-
-```
-Stwórz listę "Hot-Leads" dla osób z tagiem progress-75
-```
-
-### Pokaż statystyki
-
-```
-Pokaż mi dashboard statistics z FluentCRM
-```
-
----
-
-## Dostępne narzędzia
-
-**Kontakty**: list, get, create, update, delete, find by email  
-**Tagi**: list, create, delete, attach, detach  
-**Listy**: list, create, delete, attach contacts, detach contacts  
-**Kampanie**: list, create, pause, resume, delete  
-**Email Templates**: list, create  
-**Automatyzacje**: list, create  
-**Webhooks**: list, create  
-**Raporty**: dashboard stats, custom fields  
-
----
-
-## Dokumentacja
-
-- [FluentCRM API](https://rest-api.fluentcrm.com/#introduction)
-- [MCP Protocol](https://modelcontextprotocol.io/)
+**Date**: 2025-01-20  
+**Version**: 1.0.0
 
 ---
 

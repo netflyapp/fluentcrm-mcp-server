@@ -1,214 +1,214 @@
-# ✅ PODSUMOWANIE: MCP Server dla FluentCRM
+# ✅ SUMMARY: MCP Server for FluentCRM
 
-## 🎉 CO ZOSTAŁO STWORZONE
+## 🎉 WHAT WAS CREATED
 
-Kompletny **MCP Server dla FluentCRM** który pozwala zarządzać całą automatyzacją marketingową Autowebinaru Korki AI bezpośrednio z Cursor!
+Complete **MCP Server for FluentCRM** that allows you to manage the entire marketing automation of Korki AI Autowebinar directly from Cursor!
 
 ---
 
-## 📁 Struktura Projektu
+## 📁 Project Structure
 
 ```
 12_MCP_fluent_crm/
 ├── src/
-│   └── fluentcrm-mcp-server.ts     ← Główny kod MCP Server (500+ linii)
-├── dist/                            ← Kompilowany kod (po npm run build)
-├── package.json                     ← Zależności i scripts
-├── tsconfig.json                    ← Konfiguracja TypeScript
-├── .env                             ← Zmienne środowiskowe (DO EDYCJI)
-├── .env.example                     ← Template .env
-├── .gitignore                       ← Ignorowanie plików
-├── README.md                        ← Główna dokumentacja
-├── SETUP_CURSOR.md                  ← Instrukcja setup'u w Cursor
-├── TOOLS_REFERENCE.md               ← Pełna dokumentacja narzędzi
-└── PODSUMOWANIE.md                  ← Ten plik
+│   └── fluentcrm-mcp-server.ts     ← Main MCP Server code (500+ lines)
+├── dist/                            ← Compiled code (after npm run build)
+├── package.json                     ← Dependencies and scripts
+├── tsconfig.json                    ← TypeScript configuration
+├── .env                             ← Environment variables (TO EDIT)
+├── .env.example                     ← .env template
+├── .gitignore                       ← File ignoring
+├── README.md                        ← Main documentation
+├── SETUP_CURSOR.md                  ← Cursor setup instructions
+├── TOOLS_REFERENCE.md               ← Complete tools documentation
+└── PODSUMOWANIE.md                  ← This file
 ```
 
 ---
 
-## 🛠️ Co Zawiera
+## 🛠️ What It Contains
 
-### ✅ Pełna Integracja z FluentCRM API
+### ✅ Full Integration with FluentCRM API
 
-Na bazie oficjalnej dokumentacji: [https://rest-api.fluentcrm.com/#introduction](https://rest-api.fluentcrm.com/#introduction)
+Based on official documentation: [https://rest-api.fluentcrm.com/#introduction](https://rest-api.fluentcrm.com/#introduction)
 
-**35+ dostępnych narzędzi** dla:
-- 👤 Kontaktów (subscribers)
-- 🏷️ Tagów
+**35+ available tools** for:
+- 👤 Contacts (subscribers)
+- 🏷️ Tags
 - �� List
-- 📧 Kampanii
-- 📨 Szablonów emaili
-- 🤖 Automatyzacji (funnels)
+- 📧 Campaigns
+- 📨 Email templates
+- 🤖 Automations (funnels)
 - 🔗 Webhooks
-- 📊 Raportów
+- 📊 Reports
 
-### ✅ Bezpieczeństwo
+### ✅ Security
 
-- Basic Auth dla API
-- Environment variables dla credentials
-- `.gitignore` aby nie commitować secrets
-- Error handling z wiadomościami
+- Basic Auth for API
+- Environment variables for credentials
+- `.gitignore` to not commit secrets
+- Error handling with messages
 
 ### ✅ TypeScript + MCP SDK
 
 - Strict TypeScript configuration
-- Pełna typizacja dla FluentCRM API
-- Kompatybilny z MCP Protocol
+- Full typing for FluentCRM API
+- Compatible with MCP Protocol
 
-### ✅ Dokumentacja
+### ✅ Documentation
 
-- `README.md` - Quick start w 5 minut
-- `SETUP_CURSOR.md` - Krok po kroku setup
-- `TOOLS_REFERENCE.md` - Pełna dokumentacja każdego narzędzia
-- Inline komentarze w kodzie
+- `README.md` - Quick start in 5 minutes
+- `SETUP_CURSOR.md` - Step by step setup
+- `TOOLS_REFERENCE.md` - Complete documentation for each tool
+- Inline code comments
 
 ---
 
-## 🚀 Szybki Start
+## 🚀 Quick Start
 
-### 1. Zainstaluj zależności
+### 1. Install dependencies
 ```bash
 cd 12_MCP_fluent_crm
 npm install
 npm run build
 ```
 
-### 2. Ustaw credentials
+### 2. Set credentials
 ```bash
 cp .env.example .env
 nano .env
-# Wpisz username i password z FluentCRM API
+# Enter username and password from FluentCRM API
 ```
 
-### 3. Skonfiguruj Cursor
-- Otwórz Cursor Settings
-- Szukaj "MCP"
-- Dodaj konfigurację (patrz SETUP_CURSOR.md)
+### 3. Configure Cursor
+- Open Cursor Settings
+- Search for "MCP"
+- Add configuration (see SETUP_CURSOR.md)
 
-### 4. Testuj
-W Cursor Chat:
+### 4. Test
+In Cursor Chat:
 ```
-Pokaż mi wszystkie tagi w FluentCRM
+Show me all tags in FluentCRM
 ```
 
-Claude zwróci listę tagów! ✅
+Claude will return a list of tags! ✅
 
 ---
 
-## 📊 Możliwości
+## 📊 Capabilities
 
-### Co Możesz Robić Teraz w Cursor
+### What You Can Do Now in Cursor
 
-**Zarządzać tagami:**
+**Manage tags:**
 ```
-"Stwórz tag AW-hot-lead"
-"Przypisz tag do jan@example.com"
+"Create tag AW-hot-lead"
+"Assign tag to jan@example.com"
 "Pokaż mi wszystkie tagi"
 ```
 
-**Zarządzać listami:**
+**Manage lists:**
 ```
-"Stwórz listę AW-Hot-Leads"
-"Dodaj kontakty z tagiem AW-progress-75 do listy"
-```
-
-**Zarządzać kontaktami:**
-```
-"Stwórz nowy kontakt: Jan Kowalski, jan@example.com"
-"Zaktualizuj telefon dla kontaktu 123"
-"Usuń kontakt 456"
+"Create list AW-Hot-Leads"
+"Add contacts with tag AW-progress-75 to list"
 ```
 
-**Wysyłać kampanie:**
+**Manage contacts:**
 ```
-"Stwórz kampanię: 'Follow-up dla hot leads'"
-"Wznów kampanię 42"
+"Create new contact: Jan Kowalski, jan@example.com"
+"Update phone for contact 123"
+"Delete contact 456"
 ```
 
-**Pobierać raporty:**
+**Send campaigns:**
 ```
-"Pokaż mi statystyki dashboarda"
-"Jakie custom fields mamy?"
+"Create campaign: 'Follow-up for hot leads'"
+"Resume campaign 42"
+```
+
+**Get reports:**
+```
+"Show me dashboard statistics"
+"What custom fields do we have?"
 ```
 
 ---
 
-## 💡 Praktyczne Zastosowania
+## 💡 Practical Applications
 
-### Use Case 1: Automatyczne Tagowanie
+### Use Case 1: Automatic Tagging
 ```
-"Przypisz tag AW-progress-75 wszystkim kontaktom 
- które obejrzały 75% webinaru"
+"Assign tag AW-progress-75 to all contacts 
+ who watched 75% of the webinar"
 ```
-Claude automatycznie:
-1. Używa narzędzia do znalezienia kontaktów
-2. Przypisuje tag do każdego
-3. Zwraca raport
+Claude automatically:
+1. Uses tool to find contacts
+2. Assigns tag to each
+3. Returns report
 
-### Use Case 2: Budowanie Listy Hot Leadsów
+### Use Case 2: Building Hot Leads List
 ```
-"Stwórz listę 'AW-Hot-Leads' i dodaj wszystkie kontakty 
- z tagami AW-progress-75 i AW-kliknal-cta"
+"Create list 'AW-Hot-Leads' and add all contacts 
+ with tags AW-progress-75 and AW-kliknal-cta"
 ```
 
 ### Use Case 3: Batch Operations
 ```
-"Dodaj tag STATUS-reaktywacja do wszystkich kontaktów 
- którzy się zapisali ale nie obejrzeli webinaru"
+"Add tag STATUS-reactivation to all contacts 
+ who signed up but didn't watch the webinar"
 ```
 
 ---
 
-## 🔐 Bezpieczeństwo
+## 🔐 Security
 
-⚠️ **WAŻNE:**
-- ❌ Nie commituj `.env` z credentials do git
-- ✅ `.gitignore` chroni secrets
-- ✅ Credentials mogą być zmieniane w Cursor settings bez edycji plików
-- ✅ API Key może być zmieniane w FluentCRM → Settings → Rest API
+⚠️ **IMPORTANT:**
+- ❌ Don't commit `.env` with credentials to git
+- ✅ `.gitignore` protects secrets
+- ✅ Credentials can be changed in Cursor settings without editing files
+- ✅ API Key can be changed in FluentCRM → Settings → Rest API
 
 ---
 
-## 📚 Dokumentacja
+## 📚 Documentation
 
-| Plik | Przeznaczenie |
+| File | Purpose |
 |------|---------------|
-| **README.md** | Ogólny opis, quick start |
-| **SETUP_CURSOR.md** | Instrukcja konfiguracji Cursor (CZYTAJ NAJPIERW!) |
-| **TOOLS_REFERENCE.md** | Pełna dokumentacja każdego narzędzia |
-| **PODSUMOWANIE.md** | Ten plik - overview wszystkiego |
+| **README.md** | General description, quick start |
+| **SETUP_CURSOR.md** | Cursor configuration instructions (READ FIRST!) |
+| **TOOLS_REFERENCE.md** | Complete documentation for each tool |
+| **PODSUMOWANIE.md** | This file - overview of everything |
 
 ---
 
-## 🎯 Następne Kroki
+## 🎯 Next Steps
 
-1. ✅ **Zainstaluj** - `npm install && npm run build`
-2. ✅ **Skonfiguruj** - Edytuj `.env` z credentials
-3. ✅ **Setup Cursor** - Postępuj według `SETUP_CURSOR.md`
-4. ✅ **Testuj** - "Pokaż mi wszystkie tagi" w Cursor Chat
-5. ✅ **Używaj** - Zacznij zarządzać automatyzacją!
+1. ✅ **Install** - `npm install && npm run build`
+2. ✅ **Configure** - Edit `.env` with credentials
+3. ✅ **Setup Cursor** - Follow `SETUP_CURSOR.md`
+4. ✅ **Test** - "Show me all tags" in Cursor Chat
+5. ✅ **Use** - Start managing automation!
 
 ---
 
 ## 📞 Troubleshooting
 
 ### Problem: "MCP server not found"
-- Sprawdź ścieżkę w Cursor settings
-- Upewnij się że `npm run build` się powiódł
+- Check path in Cursor settings
+- Make sure `npm run build` succeeded
 
 ### Problem: "Authorization failed"
-- Sprawdź credentials w `.env`
-- Spróbuj wygenerować nowy API Key w FluentCRM
+- Check credentials in `.env`
+- Try generating new API Key in FluentCRM
 
 ### Problem: "Connection refused"
-- Sprawdź czy twoja domena WordPress jest dostępna
+- Check if your WordPress domain is accessible
 - Ping: `ping your-domain.com`
 
-→ Pełne troubleshooting w README.md
+→ Full troubleshooting in README.md
 
 ---
 
-## 📝 Techniczne Detale
+## 📝 Technical Details
 
 ### Stack
 - **Runtime**: Node.js 18+
@@ -217,60 +217,60 @@ Claude automatycznie:
 - **API Client**: Axios
 - **Auth**: HTTP Basic Auth
 
-### Ilość Narzędzi
-- Kontakty: 6
-- Tagi: 5
-- Listy: 5
-- Kampanie: 5
-- Szablony: 3
-- Automatyzacje: 3
+### Number of Tools
+- Contacts: 6
+- Tags: 5
+- 📋 Lists: 5
+- Campaigns: 5
+- Templates: 3
+- Automations: 3
 - Webhooks: 3
-- Raporty: 2
-- **Razem: 35+ narzędzi**
+- Reports: 2
+- **Total: 35+ tools**
 
-### Linie Kodu
-- Server: ~500 linii TypeScript
-- Dokumentacja: ~1000 linii Markdown
-- **Razem: ~1500+ linii**
-
----
-
-## ✨ Cechy
-
-✅ Pełna integracja z FluentCRM API  
-✅ 35+ dostępnych narzędzi  
-✅ Bezpieczne zarządzanie credentials  
-✅ TypeScript z strict typing  
-✅ Obsługa błędów  
-✅ Dokumentacja krok-po-kroku  
-✅ Łatwa konfiguracja Cursor  
-✅ Gotowy do produkcji  
+### Lines of Code
+- Server: ~500 lines TypeScript
+- Documentation: ~1000 lines Markdown
+- **Total: ~1500+ lines**
 
 ---
 
-## 🎉 Gotowe do Użytku!
+## ✨ Features
 
-MCP Server jest w pełni funkcjonalny i gotowy do użytku!
-
-**Następnym krokiem jest:**
-1. Przeczytaj `SETUP_CURSOR.md`
-2. Zainstaluj i skonfiguruj
-3. Zacznij używać w Cursor! 🚀
+✅ Full integration with FluentCRM API  
+✅ 35+ available tools  
+✅ Secure credential management  
+✅ TypeScript with strict typing  
+✅ Error handling  
+✅ Step-by-step documentation  
+✅ Easy Cursor configuration  
+✅ Production ready  
 
 ---
 
-## 📄 Licencja
+## 🎉 Ready to Use!
+
+MCP Server is fully functional and ready to use!
+
+**Next step is:**
+1. Read `SETUP_CURSOR.md`
+2. Install and configure
+3. Start using in Cursor! 🚀
+
+---
+
+## 📄 License
 
 MIT
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
 Miłosz Zając
 
-**Data**: 2025-10-20  
-**Wersja**: 1.0.0  
+**Date**: 2025-10-20  
+**Version**: 1.0.0  
 **Status**: ✅ Ready for Production
 
 ---

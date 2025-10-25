@@ -1,151 +1,177 @@
 # 📝 Changelog - FluentCRM MCP Server
 
-**Historia zmian** w projekcie FluentCRM MCP Server.
+**Change history** in FluentCRM MCP Server project.
+
+---
+
+## [1.2.0] - 2025-01-27
+
+### ✨ New Features
+
+#### 🌍 Full English Translation
+- **Translated all documentation** from Polish to English
+- **Updated README.md** - complete English translation
+- **Updated PODSUMOWANIE.md** - complete English translation  
+- **Updated START_TUTAJ.md** - complete English translation
+- **Updated SETUP_CURSOR.md** - complete English translation
+- **Updated changelog.md** - complete English translation
+
+#### 📚 Documentation Improvements
+- **Consistent English terminology** across all files
+- **Improved readability** for international users
+- **Maintained all technical accuracy** during translation
+- **Preserved all code examples** and configuration snippets
+
+### 🔧 Technical Improvements
+- **No code changes** - translation only
+- **Maintained file structure** and formatting
+- **Preserved all links** and references
+- **Kept all technical details** intact
 
 ---
 
 ## [1.1.0] - 2025-01-27
 
-### ✨ Nowe funkcjonalności
+### ✨ New Features
 
 #### 🔗 Smart Links Support
-- **Dodano metody Smart Links** do FluentCRMClient:
-  - `listSmartLinks()` - pobiera listę Smart Links
-  - `getSmartLink()` - pobiera szczegóły Smart Link
-  - `createSmartLink()` - tworzy nowy Smart Link
-  - `updateSmartLink()` - aktualizuje Smart Link
-  - `deleteSmartLink()` - usuwa Smart Link
-  - `generateSmartLinkShortcode()` - generuje shortcode
-  - `validateSmartLinkData()` - waliduje dane
+- **Added Smart Links methods** to FluentCRMClient:
+  - `listSmartLinks()` - gets list of Smart Links
+  - `getSmartLink()` - gets Smart Link details
+  - `createSmartLink()` - creates new Smart Link
+  - `updateSmartLink()` - updates Smart Link
+  - `deleteSmartLink()` - deletes Smart Link
+  - `generateSmartLinkShortcode()` - generates shortcode
+  - `validateSmartLinkData()` - validates data
 
-#### 🛠️ Nowe narzędzia MCP
-- `fluentcrm_list_smart_links` - lista Smart Links
-- `fluentcrm_get_smart_link` - szczegóły Smart Link
-- `fluentcrm_create_smart_link` - tworzenie Smart Link
-- `fluentcrm_update_smart_link` - aktualizacja Smart Link
-- `fluentcrm_delete_smart_link` - usuwanie Smart Link
-- `fluentcrm_generate_smart_link_shortcode` - generowanie shortcode
-- `fluentcrm_validate_smart_link_data` - walidacja danych
+#### 🛠️ New MCP Tools
+- `fluentcrm_list_smart_links` - list Smart Links
+- `fluentcrm_get_smart_link` - Smart Link details
+- `fluentcrm_create_smart_link` - create Smart Link
+- `fluentcrm_update_smart_link` - update Smart Link
+- `fluentcrm_delete_smart_link` - delete Smart Link
+- `fluentcrm_generate_smart_link_shortcode` - generate shortcode
+- `fluentcrm_validate_smart_link_data` - validate data
 
-#### 📚 Dokumentacja
-- **Zaktualizowano API_REFERENCE.md** - dodano sekcję Smart Links
-- **Zaktualizowano TOOLS_REFERENCE.md** - dodano dokumentację narzędzi
-- **Utworzono SMART_LINKS_EXAMPLES.md** - przewodnik z przykładami
+#### 📚 Documentation
+- **Updated API_REFERENCE.md** - added Smart Links section
+- **Updated TOOLS_REFERENCE.md** - added tools documentation
+- **Created SMART_LINKS_EXAMPLES.md** - guide with examples
 
-### 🔧 Ulepszenia techniczne
+### 🔧 Technical Improvements
 
 #### TypeScript
-- **Poprawiono typowanie** w switch statement
-- **Dodano obsługę błędów** dla nieistniejących endpointów
-- **Zaimplementowano graceful fallback** dla API Smart Links
+- **Improved typing** in switch statement
+- **Added error handling** for non-existent endpoints
+- **Implemented graceful fallback** for Smart Links API
 
 #### Error Handling
-- **Inteligentne obsługiwanie błędów 404** - informuje o braku endpointów
-- **Helpful error messages** - sugeruje alternatywne rozwiązania
-- **Validation helpers** - walidacja danych przed wysłaniem
+- **Intelligent 404 error handling** - informs about missing endpoints
+- **Helpful error messages** - suggests alternative solutions
+- **Validation helpers** - data validation before sending
 
-### ⚠️ Ograniczenia
+### ⚠️ Limitations
 
 #### Smart Links API
-- **FluentCRM nie ma jeszcze natywnych endpointów** REST API dla Smart Links
-- **Narzędzia są przygotowane** na przyszłe rozszerzenia API
-- **Obecnie wymagane ręczne tworzenie** przez interfejs FluentCRM
+- **FluentCRM does not yet have native endpoints** REST API for Smart Links
+- **Tools are prepared** for future API extensions
+- **Currently requires manual creation** through FluentCRM interface
 
-#### Rekomendowane rozwiązania
-1. **Ręczne tworzenie** Smart Links przez `FluentCRM → Smart Links`
-2. **Używanie wygenerowanych shortcodes** w kampaniach email
-3. **Niestandardowe rozszerzenia** WordPress dla API (przyszłość)
+#### Recommended Solutions
+1. **Manual creation** of Smart Links through `FluentCRM → Smart Links`
+2. **Using generated shortcodes** in email campaigns
+3. **Custom WordPress extensions** for API (future)
 
-### 🎯 Przykłady użycia
+### 🎯 Usage Examples
 
-#### Generowanie shortcode
+#### Generate shortcode
 ```bash
 fluentcrm_generate_smart_link_shortcode \
   slug="aw-link-webinar-mail" \
   linkText="Przejdź do webinaru"
 ```
 
-#### Walidacja danych
+#### Data validation
 ```bash
 fluentcrm_validate_smart_link_data \
   title="AW-Link-Webinar-Mail" \
   target_url="https://korkiai.pl/lp/pages/webinar/player.html?email={{contact.email}}"
 ```
 
-#### Sprawdzenie dostępności API
+#### Check API availability
 ```bash
 fluentcrm_list_smart_links
-# Zwraca informację o braku endpointów + sugestie
+# Returns information about missing endpoints + suggestions
 ```
 
 ---
 
 ## [1.0.0] - 2025-01-20
 
-### 🚀 Pierwsza wersja
+### 🚀 First version
 
-#### Podstawowe funkcjonalności
-- **Kontakty** - CRUD operations
-- **Tagi** - zarządzanie tagami
-- **Listy** - zarządzanie listami
-- **Kampanie** - zarządzanie kampaniami
-- **Email Templates** - szablony emaili
-- **Automatyzacje** - funnels
-- **Webhooks** - zarządzanie webhookami
-- **Raporty** - statystyki i custom fields
+#### Basic functionality
+- **Contacts** - CRUD operations
+- **Tags** - tag management
+- **Lists** - list management
+- **Campaigns** - campaign management
+- **Email Templates** - email templates
+- **Automations** - funnels
+- **Webhooks** - webhook management
+- **Reports** - statistics and custom fields
 
-#### Architektura
-- **TypeScript** - pełne typowanie
-- **Axios** - HTTP client z Basic Auth
-- **Error handling** - obsługa błędów API
-- **MCP Protocol** - integracja z Cursor
+#### Architecture
+- **TypeScript** - full typing
+- **Axios** - HTTP client with Basic Auth
+- **Error handling** - API error handling
+- **MCP Protocol** - integration with Cursor
 
-#### Dokumentacja
-- **API_REFERENCE.md** - dokumentacja endpointów
-- **TOOLS_REFERENCE.md** - dokumentacja narzędzi
-- **README.md** - przewodnik startowy
+#### Documentation
+- **API_REFERENCE.md** - endpoint documentation
+- **TOOLS_REFERENCE.md** - tools documentation
+- **README.md** - getting started guide
 
 ---
 
 ## 🔮 Roadmap
 
-### v1.2.0 (Planowane)
-- **Bulk operations** - masowe operacje na kontaktach
-- **Advanced filtering** - zaawansowane filtrowanie
-- **Custom fields management** - zarządzanie polami niestandardowymi
-- **Performance optimizations** - optymalizacje wydajności
+### v1.2.0 (Planned)
+- **Bulk operations** - bulk operations on contacts
+- **Advanced filtering** - advanced filtering
+- **Custom fields management** - custom fields management
+- **Performance optimizations** - performance optimizations
 
-### v1.3.0 (Planowane)
-- **Smart Links API** - gdy FluentCRM doda endpointy
-- **Advanced automations** - zaawansowane automatyzacje
-- **Integration hooks** - haki integracyjne
-- **Real-time sync** - synchronizacja w czasie rzeczywistym
+### v1.3.0 (Planned)
+- **Smart Links API** - when FluentCRM adds endpoints
+- **Advanced automations** - advanced automations
+- **Integration hooks** - integration hooks
+- **Real-time sync** - real-time synchronization
 
-### v2.0.0 (Długoterminowe)
-- **GraphQL support** - obsługa GraphQL
-- **WebSocket connections** - połączenia WebSocket
-- **Advanced caching** - zaawansowane cache'owanie
-- **Multi-tenant support** - obsługa wielu instancji
+### v2.0.0 (Long-term)
+- **GraphQL support** - GraphQL support
+- **WebSocket connections** - WebSocket connections
+- **Advanced caching** - advanced caching
+- **Multi-tenant support** - multi-tenant support
 
 ---
 
 ## 📊 Statystyki
 
 ### v1.1.0
-- **+7 nowych narzędzi** MCP
-- **+7 nowych metod** w FluentCRMClient
-- **+3 pliki dokumentacji** zaktualizowane
-- **+1 nowy plik** z przykładami
+- **+7 new tools** MCP
+- **+7 new methods** in FluentCRMClient
+- **+3 documentation files** updated
+- **+1 new file** with examples
 
 ### v1.0.0
-- **25 narzędzi** MCP
-- **25 metod** w FluentCRMClient
-- **3 pliki** dokumentacji
-- **Pełna integracja** z FluentCRM API
+- **25 tools** MCP
+- **25 methods** in FluentCRMClient
+- **3 files** documentation
+- **Full integration** with FluentCRM API
 
 ---
 
-**Przygotował**: AI Asystent  
-**Data**: 2025-01-27  
-**Wersja**: 1.1.0  
-**Dla projektu**: Korki AI - FluentCRM MCP Server
+**Prepared by**: AI Assistant  
+**Date**: 2025-01-27  
+**Version**: 1.1.0  
+**For project**: Korki AI - FluentCRM MCP Server

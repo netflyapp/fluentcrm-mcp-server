@@ -1,19 +1,19 @@
-# 🚀 START TUTAJ - Instrukcja 5 Minut
+# 🚀 START HERE - 5 Minute Guide
 
-**MCP Server dla FluentCRM** - Zarządzaj marketingiem z Cursor!
+**MCP Server for FluentCRM** - Manage marketing from Cursor!
 
 ---
 
-## ⚡ Szybkie Etapy (5 minut)
+## ⚡ Quick Steps (5 minutes)
 
-### 1️⃣ Pobierz Credentials (1 min)
+### 1️⃣ Get Credentials (1 min)
 
-1. Zaloguj się: `https://your-domain.com/wp-admin`
-2. Idź do: **FluentCRM → Settings → Rest API**
-3. Kliknij: **Create New Key**
-4. Skopiuj: **Username** i **Application Password**
+1. Log in: `https://your-domain.com/wp-admin`
+2. Go to: **FluentCRM → Settings → Rest API**
+3. Click: **Create New Key**
+4. Copy: **Username** and **Application Password**
 
-### 2️⃣ Zainstaluj (1 min)
+### 2️⃣ Install (1 min)
 
 ```bash
 cd fluentcrm-mcp-server
@@ -21,27 +21,27 @@ npm install
 npm run build
 ```
 
-### 3️⃣ Skonfiguruj (2 min)
+### 3️⃣ Configure (2 min)
 
-**Edytuj .env:**
+**Edit .env:**
 ```bash
 nano .env
 ```
 
-**Wklej:**
+**Paste:**
 ```env
 FLUENTCRM_API_USERNAME=your_username_here
 FLUENTCRM_API_PASSWORD=your_password_here
 ```
 
-Zapisz: `Ctrl+X` → `Y` → `Enter`
+Save: `Ctrl+X` → `Y` → `Enter`
 
 ### 4️⃣ Setup Cursor (1 min)
 
-1. Otwórz **Cursor**
-2. Naciśnij: **Cmd+,** (macOS)
-3. Wyszukaj: **"MCP"** lub **"mcp_settings"**
-4. Edytuj plik i dodaj:
+1. Open **Cursor**
+2. Press: **Cmd+,** (macOS)
+3. Search for: **"MCP"** or **"mcp_settings"**
+4. Edit file and add:
 
 ```json
 {
@@ -60,132 +60,132 @@ Zapisz: `Ctrl+X` → `Y` → `Enter`
 }
 ```
 
-5. Zapisz i **restart Cursor**
+5. Save and **restart Cursor**
 
-### 5️⃣ Testuj (instant!)
+### 5️⃣ Test (instant!)
 
-W Cursor Chat wpisz:
+In Cursor Chat type:
 ```
-Pokaż mi wszystkie tagi w FluentCRM
+Show me all tags in FluentCRM
 ```
 
-**Rezultat:** Claude zwróci listę tagów z FluentCRM! ✅
+**Result:** Claude will return a list of tags from FluentCRM! ✅
 
 ---
 
-## 📚 Pełna Dokumentacja
+## 📚 Complete Documentation
 
-Po szybkim starcie przeczytaj:
+After quick start read:
 
-| Dokument | Opis | Czas |
+| Document | Description | Time |
 |----------|------|------|
-| **README.md** | Ogólny overview | 5 min |
-| **SETUP_CURSOR.md** | Szczegółowa konfiguracja | 10 min |
-| **TOOLS_REFERENCE.md** | Wszystkie dostępne narzędzia | 15 min |
-| **API_REFERENCE.md** | Dokumentacja FluentCRM API | dla reference |
-| **PODSUMOWANIE.md** | Pełny overview projektu | 10 min |
+| **README.md** | General overview | 5 min |
+| **SETUP_CURSOR.md** | Detailed configuration | 10 min |
+| **TOOLS_REFERENCE.md** | All available tools | 15 min |
+| **API_REFERENCE.md** | FluentCRM API documentation | for reference |
+| **PODSUMOWANIE.md** | Complete project overview | 10 min |
 
 ---
 
-## 💬 Przykłady Użycia
+## 💬 Usage Examples
 
-Po setup'ie w Cursor Chat możesz pisać:
+After setup in Cursor Chat you can write:
 
 ```
 Pokaż mi wszystkie tagi
 ```
 
 ```
-Stwórz tag AW-hot-lead z opisem "Gorące leady"
+Create tag AW-hot-lead with description "Hot leads"
 ```
 
 ```
-Przypisz tag AW-progress-75 do jan@example.com
+Assign tag AW-progress-75 to jan@example.com
 ```
 
 ```
-Stwórz listę AW-Hot-Leads
+Create list AW-Hot-Leads
 ```
 
 ```
-Pokaż mi statystyki dashboarda
+Show me dashboard statistics
 ```
 
-Claude automatycznie użyje MCP Server! 🎉
+Claude will automatically use MCP Server! 🎉
 
 ---
 
 ## ⚠️ Troubleshooting
 
 ### Problem: "MCP server fluentcrm not found"
-- Sprawdź ścieżkę w konfiguracji Cursor
-- Sprawdź czy `npm run build` się powiódł
+- Check path in Cursor configuration
+- Check if `npm run build` succeeded
 - Restart Cursor
 
 ### Problem: "Authorization failed"
-- Sprawdź username/password w .env
-- Wygeneruj nowy API Key w FluentCRM
+- Check username/password in .env
+- Generate new API Key in FluentCRM
 
-### Problem: Cursor nie uruchamia się
-- Uszkodzony settings.json?
-- Sprawdź syntax JSON (bez błędów)
+### Problem: Cursor won't start
+- Corrupted settings.json?
+- Check JSON syntax (no errors)
 
 ---
 
-## 📝 Struktura Projektu
+## 📝 Project Structure
 
 ```
 12_MCP_fluent_crm/
-├── src/fluentcrm-mcp-server.ts   ← Kod serwera (790 linii)
-├── dist/                          ← Kompilowany kod
-├── package.json                   ← Zależności
-├── .env                           ← EDYTUJ TUTAJ (credentials)
-├── .env.example                   ← Template .env
-├── README.md                      ← Dokumentacja
-├── SETUP_CURSOR.md                ← Setup instrukcja
-├── TOOLS_REFERENCE.md             ← Narzędzia
+├── src/fluentcrm-mcp-server.ts   ← Server code (790 lines)
+├── dist/                          ← Compiled code
+├── package.json                   ← Dependencies
+├── .env                           ← EDIT HERE (credentials)
+├── .env.example                   ← .env template
+├── README.md                      ← Documentation
+├── SETUP_CURSOR.md                ← Setup instructions
+├── TOOLS_REFERENCE.md             ← Tools
 ├── API_REFERENCE.md               ← API docs
 ├── PODSUMOWANIE.md                ← Overview
-└── START_TUTAJ.md                 ← Ten plik!
+└── START_TUTAJ.md                 ← This file!
 ```
 
 ---
 
 ## ✅ Checklist
 
-- [ ] Pobrano API Credentials z FluentCRM
-- [ ] Zainstalowano zależności (`npm install`)
-- [ ] Skompilowano kod (`npm run build`)
-- [ ] Edytowano `.env` z credentials
-- [ ] Skonfigurowano Cursor MCP settings
+- [ ] Got API Credentials from FluentCRM
+- [ ] Installed dependencies (`npm install`)
+- [ ] Compiled code (`npm run build`)
+- [ ] Edited `.env` with credentials
+- [ ] Configured Cursor MCP settings
 - [ ] Restarted Cursor
-- [ ] Test chat - "Pokaż mi wszystkie tagi"
+- [ ] Test chat - "Show me all tags"
 
-**Po zaznaczeniu wszystkiego - GOTOWE! 🎉**
-
----
-
-## 🎯 Co Dalej?
-
-1. **Zaznacz checklist** powyżej
-2. **Przeczytaj** SETUP_CURSOR.md dla szczegółów
-3. **Eksperymentuj** - Cursor Chat + MCP = power!
-4. **Zarządzaj** automatyzacją Autowebinaru!
+**After checking everything - READY! 🎉**
 
 ---
 
-## 💡 Szybkie Komendy
+## 🎯 What Next?
+
+1. **Check the checklist** above
+2. **Read** SETUP_CURSOR.md for details
+3. **Experiment** - Cursor Chat + MCP = power!
+4. **Manage** Autowebinar automation!
+
+---
+
+## 💡 Quick Commands
 
 ```bash
-# Build projekt
+# Build project
 npm run build
 
-# Testuj na localhost
+# Test on localhost
 export FLUENTCRM_API_USERNAME="your_username"
 export FLUENTCRM_API_PASSWORD="your_password"
 npm start
 
-# Wyczyść node_modules (jeśli coś się zepsuło)
+# Clean node_modules (if something broke)
 rm -rf node_modules package-lock.json
 npm install
 npm run build
@@ -193,34 +193,34 @@ npm run build
 
 ---
 
-## 🔐 Bezpieczeństwo
+## 🔐 Security
 
-⚠️ **NIGDY nie:**
-- Commituj `.env` z real credentials do git
-- Udostępniaj API keys publicznie
-- Hardkoduj credentials w kodzie
+⚠️ **NEVER:**
+- Commit `.env` with real credentials to git
+- Share API keys publicly
+- Hardcode credentials in code
 
-✅ **ZAWSZE:**
-- Używaj environment variables
-- Rotuj API keys regularnie
-- Sprawdzaj `.gitignore`
-
----
-
-## 📞 Potrzebujesz Pomocy?
-
-1. Sprawdź **SETUP_CURSOR.md**
-2. Przeczytaj **TOOLS_REFERENCE.md**
-3. Sprawdź FluentCRM docs: https://rest-api.fluentcrm.com/
-4. Logi Cursor: `~/.cursor/logs.txt`
+✅ **ALWAYS:**
+- Use environment variables
+- Rotate API keys regularly
+- Check `.gitignore`
 
 ---
 
-## 🎉 Gotowy!
+## 📞 Need Help?
 
-Teraz możesz zarządzać całą automatyzacją marketingową bezpośrednio z Cursor!
+1. Check **SETUP_CURSOR.md**
+2. Read **TOOLS_REFERENCE.md**
+3. Check FluentCRM docs: https://rest-api.fluentcrm.com/
+4. Cursor logs: `~/.cursor/logs.txt`
 
-**Zabawy! 🚀**
+---
+
+## 🎉 Ready!
+
+Now you can manage the entire marketing automation directly from Cursor!
+
+**Have fun! 🚀**
 
 ---
 

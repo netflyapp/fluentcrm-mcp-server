@@ -1,39 +1,39 @@
-# 🎯 Instrukcja Setup MCP Server w Cursor
+# 🎯 MCP Server Setup Instructions in Cursor
 
-## Krok 1: Przygotowanie
+## Step 1: Preparation
 
-1. **Zainstaluj zależności:**
+1. **Install dependencies:**
 ```bash
 cd 12_MCP_fluent_crm
 npm install
 npm run build
 ```
 
-2. **Pobierz API Credentials z FluentCRM:**
-   - Zaloguj się: https://your-domain.com/wp-admin
-   - Przejdź do: **FluentCRM → Settings → Rest API**
-   - Kliknij: **Create New Key**
-   - Skopiuj: **Username** i **Application Password**
+2. **Get API Credentials from FluentCRM:**
+   - Log in: https://your-domain.com/wp-admin
+   - Go to: **FluentCRM → Settings → Rest API**
+   - Click: **Create New Key**
+   - Copy: **Username** and **Application Password**
 
-3. **Edytuj .env:**
+3. **Edit .env:**
 ```bash
 cp .env.example .env
 nano .env
 
-# Wpisz:
+# Enter:
 FLUENTCRM_API_USERNAME=your_username
 FLUENTCRM_API_PASSWORD=your_password
 ```
 
-## Krok 2: Konfiguracja Cursor
+## Step 2: Cursor Configuration
 
-### Opcja A: GUI (Zalecane)
+### Option A: GUI (Recommended)
 
-1. Otwórz **Cursor**
-2. Naciśnij: **Cmd+,** (macOS) lub **Ctrl+,** (Windows/Linux)
-3. Wyszukaj: **"MCP"**
-4. Kliknij: **"Edit in settings.json"**
-5. W otwartym pliku dodaj:
+1. Open **Cursor**
+2. Press: **Cmd+,** (macOS) or **Ctrl+,** (Windows/Linux)
+3. Search for: **"MCP"**
+4. Click: **"Edit in settings.json"**
+5. In the opened file add:
 
 ```json
 {
@@ -53,65 +53,65 @@ FLUENTCRM_API_PASSWORD=your_password
 }
 ```
 
-6. **Zapisz** i **restart Cursor**
+6. **Save** and **restart Cursor**
 
-### Opcja B: Ręczna edycja pliku
+### Option B: Manual file editing
 
-1. Otwórz: `~/.cursor/settings.json` (lub `~/.cursor/mcp_settings.json`)
-2. Dodaj sekcję `mcpServers` jak wyżej
-3. Zapisz i restart Cursor
+1. Open: `~/.cursor/settings.json` (or `~/.cursor/mcp_settings.json`)
+2. Add `mcpServers` section as above
+3. Save and restart Cursor
 
-## Krok 3: Testowanie
+## Step 3: Testing
 
-1. W Cursor otwórz **Chat** (Cmd+K)
-2. Wpisz:
+1. In Cursor open **Chat** (Cmd+K)
+2. Type:
 ```
-Pokaż mi wszystkie tagi w FluentCRM
+Show me all tags in FluentCRM
 ```
 
-3. Claude powinien automatycznie użyć MCP Server i zwrócić listę tagów ✅
+3. Claude should automatically use MCP Server and return a list of tags ✅
 
 ## ⚠️ Troubleshooting
 
 ### Problem: "MCP server fluentcrm not found"
 
 **Rozwiązanie:**
-1. Sprawdź ścieżkę do `dist/fluentcrm-mcp-server.js` w konfiguracji
-2. Upewnij się że `npm run build` się powiódł
+1. Check path to `dist/fluentcrm-mcp-server.js` in configuration
+2. Make sure `npm run build` succeeded
 3. Restart Cursor
 
 ### Problem: "Authorization failed"
 
 **Rozwiązanie:**
-1. Sprawdź username i password w `.env`
-2. Spróbuj wygenerować nowy API Key w FluentCRM
-3. Upewnij się że Manager ma odpowiednie permissions
+1. Check username and password in `.env`
+2. Try generating new API Key in FluentCRM
+3. Make sure Manager has appropriate permissions
 
 ### Problem: "Connection refused"
 
 **Rozwiązanie:**
-1. Sprawdź czy twoja domena WordPress jest dostępna
-2. Spróbuj: `curl https://your-domain.com`
-3. Sprawdź czy WordPress jest uruchomiony
+1. Check if your WordPress domain is accessible
+2. Try: `curl https://your-domain.com`
+3. Check if WordPress is running
 
-## ✅ Checklist po Setup
+## ✅ Post-Setup Checklist
 
-- [ ] npm install - zainstalowano zależności
-- [ ] npm run build - kompilacja TypeScript powiedzie​a się
-- [ ] .env - ustawiono credentials
-- [ ] Cursor MCP config - dodano configurację
+- [ ] npm install - dependencies installed
+- [ ] npm run build - TypeScript compilation succeeded
+- [ ] .env - credentials set
+- [ ] Cursor MCP config - configuration added
 - [ ] Cursor restarted - restart Cursor
-- [ ] Test Chat - Claude zwrócił listę tagów
+- [ ] Test Chat - Claude returned list of tags
 
-## 🚀 Gotowe!
+## 🚀 Ready!
 
-Po ukończeniu wszystkich kroków możesz zacząć używać MCP Server!
+After completing all steps you can start using MCP Server!
 
-Przykłady:
-- "Pokaż mi wszystkie tagi"
-- "Stwórz tag AW-hot-lead"
-- "Przypisz tag AW-progress-75 do jan@example.com"
-- "Pokaż statystyki dashboarda"
+Examples:
+- "Show me all tags"
+- "Create tag AW-hot-lead"
+- "Assign tag AW-progress-75 to jan@example.com"
+- "Show dashboard statistics"
 
 ---
 
