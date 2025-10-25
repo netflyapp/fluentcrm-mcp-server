@@ -1,7 +1,7 @@
 {
   "name": "fluentcrm-mcp-server",
   "version": "1.0.0",
-  "description": "MCP Server for FluentCRM - Manage autowebinar marketing automation from Cursor",
+  "description": "MCP Server for FluentCRM - Manage marketing automation and CRM operations from Cursor",
   "type": "module",
   "main": "dist/fluentcrm-mcp-server.js",
   "bin": {
@@ -20,7 +20,7 @@
     "cursor",
     "api"
   ],
-  "author": "Autowebinar Korki AI",
+  "author": "Miłosz Zając <www.netfly.pl>",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.1",

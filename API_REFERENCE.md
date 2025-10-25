@@ -380,4 +380,4 @@ W MCP Server implementujemy:
 
 ---
 
-Made with ❤️ for Autowebinar Korki AI
+Made with ❤️ by Miłosz Zając

@@ -29,6 +29,7 @@ Ten MCP Server pozwala Tobie:
 ✅ **Automatyzacje** - zarządzać funnelami (automatyzacjami)  
 ✅ **Webhooks** - konfigurować webhook'i do FluentCRM  
 ✅ **Raporty** - pobierać statystyki i metryki  
+✅ **Smart Links** - zarządzać inteligentnymi linkami (gdy API będzie dostępne)
 
 Wszystko bezpośrednio z Cursor, w rozmowie z Claude!
 
@@ -243,10 +244,10 @@ Pokaż mi wszystkie tagi w FluentCRM
 ✅ Pobieramy tagi z FluentCRM...
 
 Znalazłem następujące tagi:
-1. AW-zapisany (ID: 1)
-2. AW-webinar-jit (ID: 2)
-3. AW-progress-75 (ID: 3)
-4. STATUS-uczestniczyl (ID: 4)
+1. zapisany (ID: 1)
+2. webinar-jit (ID: 2)
+3. progress-75 (ID: 3)
+4. uczestniczyl (ID: 4)
 ... i 47 więcej
 ```
 
@@ -254,7 +255,7 @@ Znalazłem następujące tagi:
 
 **W Cursor:**
 ```
-Stwórz tag "AW-hot-lead" z opisem "Osoby które obejrzały 75%+ i są zainteresowane"
+Stwórz tag "hot-lead" z opisem "Osoby które obejrzały 75%+ i są zainteresowane"
 ```
 
 **Claude automatycznie:**
@@ -265,7 +266,7 @@ Stwórz tag "AW-hot-lead" z opisem "Osoby które obejrzały 75%+ i są zainteres
 
 **W Cursor:**
 ```
-Przypisz tag "AW-progress-75" do kontaktu z emailem "jan@example.com"
+Przypisz tag "progress-75" do kontaktu z emailem "jan@example.com"
 ```
 
 **Claude:**
@@ -277,7 +278,7 @@ Przypisz tag "AW-progress-75" do kontaktu z emailem "jan@example.com"
 
 **W Cursor:**
 ```
-Stwórz nową listę "AW-Hot-leads" z opisem "Uczestnicy którzy obejrzeli 75%+ webinaru"
+Stwórz nową listę "Hot-leads" z opisem "Uczestnicy którzy obejrzeli 75%+ webinaru"
 ```
 
 **Claude tworzy listę**
@@ -286,7 +287,7 @@ Stwórz nową listę "AW-Hot-leads" z opisem "Uczestnicy którzy obejrzeli 75%+ 
 
 **W Cursor:**
 ```
-Dodaj wszystkie kontakty z tagiem "AW-progress-75" do listy "AW-Hot-leads"
+Dodaj wszystkie kontakty z tagiem "progress-75" do listy "Hot-leads"
 ```
 
 ---
@@ -385,14 +386,15 @@ MIT
 
 ## Autor
 
-Autowebinar Korki AI
+**Miłosz Zając**  
+🌐 [www.netfly.pl](https://www.netfly.pl)
   
-**Data**: 2025-10-20  
+**Data**: 2025-01-20  
 **Wersja**: 1.0.0
 
 ---
 
-Made with ❤️ for Autowebinar Korki AI
+Made with ❤️ by Miłosz Zając
 EOF
 
 cat > /Users/miloszzajac2/Desktop/111_mac_mini/10_BIZNES/10.01_projekty/10.01.05_autowebinar_korki/12_MCP_fluent_crm/README.md << 'README_EOF'
@@ -419,6 +421,7 @@ cat > /Users/miloszzajac2/Desktop/111_mac_mini/10_BIZNES/10.01_projekty/10.01.05
 ✅ **Tworzy kampanie** - wysyłaj email do segmentów  
 ✅ **Zarządzaj automatyzacjami** - edytuj funnels  
 ✅ **Pobierz raporty** - statystyki i metryki  
+✅ **Smart Links** - zarządzaj inteligentnymi linkami  
 
 Wszystko z Cursor, w rozmowie z Claude!
 
@@ -520,19 +523,19 @@ npm start
 ### Stwórz tag
 
 ```
-Stwórz tag "AW-hot-lead" z opisem "Osoby zainteresowane ofertą"
+Stwórz tag "hot-lead" z opisem "Osoby zainteresowane ofertą"
 ```
 
 ### Przypisz tag do kontaktu
 
 ```
-Przypisz tag "AW-progress-75" do Jan@example.com
+Przypisz tag "progress-75" do Jan@example.com
 ```
 
 ### Stwórz listę
 
 ```
-Stwórz listę "AW-Hot-Leads" dla osób z tagiem AW-progress-75
+Stwórz listę "Hot-Leads" dla osób z tagiem progress-75
 ```
 
 ### Pokaż statystyki
@@ -563,4 +566,4 @@ Pokaż mi dashboard statistics z FluentCRM
 
 ---
 
-Made with ❤️ for Autowebinar Korki AI
+Made with ❤️ by Miłosz Zając

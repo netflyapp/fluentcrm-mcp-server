@@ -115,4 +115,4 @@ Przykłady:
 
 ---
 
-Made with ❤️ for Autowebinar Korki AI
+Made with ❤️ by Miłosz Zając

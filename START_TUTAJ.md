@@ -1,6 +1,6 @@
 # 🚀 START TUTAJ - Instrukcja 5 Minut
 
-**MCP Server dla FluentCRM** - Zarządzaj Autowebinarem z Cursor!
+**MCP Server dla FluentCRM** - Zarządzaj marketingiem z Cursor!
 
 ---
 
@@ -16,7 +16,7 @@
 ### 2️⃣ Zainstaluj (1 min)
 
 ```bash
-cd 12_MCP_fluent_crm
+cd fluentcrm-mcp-server
 npm install
 npm run build
 ```
@@ -218,10 +218,10 @@ npm run build
 
 ## 🎉 Gotowy!
 
-Teraz możesz zarządzać całą automatyzacją Autowebinaru Korki AI bezpośrednio z Cursor!
+Teraz możesz zarządzać całą automatyzacją marketingową bezpośrednio z Cursor!
 
 **Zabawy! 🚀**
 
 ---
 
-Made with ❤️ for Autowebinar Korki AI
+Made with ❤️ by Miłosz Zając

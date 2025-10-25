@@ -267,7 +267,7 @@ MIT
 
 ## 👨‍💻 Autor
 
-Autowebinar Korki AI
+Miłosz Zając
 
 **Data**: 2025-10-20  
 **Wersja**: 1.0.0  
@@ -275,4 +275,4 @@ Autowebinar Korki AI
 
 ---
 
-Made with ❤️ for Autowebinar Korki AI
+Made with ❤️ by Miłosz Zając

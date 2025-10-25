@@ -436,13 +436,13 @@ Jakie custom fields mamy w FluentCRM?
 
 ## 🎯 Praktyczne Scenariusze
 
-### Scenario 1: Utwórz strukturę tagów dla autowebinaru
+### Scenario 1: Utwórz strukturę tagów dla marketingu
 
 ```
-1. Stwórz tag "AW-zapisany"
-2. Stwórz tag "AW-progress-75"
-3. Stwórz tag "AW-hot-lead"
-4. Stwórz tag "STATUS-uczestniczyl"
+1. Stwórz tag "zapisany"
+2. Stwórz tag "progress-75"
+3. Stwórz tag "hot-lead"
+4. Stwórz tag "uczestniczyl"
 ```
 
 ### Scenario 2: Przypisz tagi do konkretnego kontaktu
@@ -480,4 +480,4 @@ Jakie custom fields mamy w FluentCRM?
 
 ---
 
-Made with ❤️ for Autowebinar Korki AI
+Made with ❤️ by Miłosz Zając
