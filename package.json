@@ -1,0 +1,34 @@
+{
+  "name": "fluentcrm-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server for FluentCRM - Manage autowebinar marketing automation from Cursor",
+  "type": "module",
+  "main": "dist/fluentcrm-mcp-server.js",
+  "bin": {
+    "fluentcrm-mcp": "./dist/fluentcrm-mcp-server.js"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x dist/fluentcrm-mcp-server.js",
+    "dev": "tsc --watch",
+    "start": "FLUENTCRM_API_USERNAME='$FLUENTCRM_API_USERNAME' FLUENTCRM_API_PASSWORD='$FLUENTCRM_API_PASSWORD' node dist/fluentcrm-mcp-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mcp",
+    "fluentcrm",
+    "marketing-automation",
+    "cursor",
+    "api"
+  ],
+  "author": "Autowebinar Korki AI",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.1",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  }
+}
