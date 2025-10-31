@@ -2,6 +2,10 @@
 
 **MCP Server for FluentCRM** - manage your entire marketing automation directly from Cursor!
 
+<a href="https://glama.ai/mcp/servers/@netflyapp/fluentcrm-mcp-server">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@netflyapp/fluentcrm-mcp-server/badge" alt="FluentCRM Server MCP server" />
+</a>
+
 ---
 
 ## 📋 Table of Contents
@@ -33,7 +37,7 @@ This MCP Server allows you to:
 
 Everything directly from Cursor, in conversation with Claude!
 
----
+--- 
 
 ## Requirements
 
